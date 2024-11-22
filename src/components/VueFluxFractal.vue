@@ -48,7 +48,7 @@ const options = shallowReactive<VueFluxOptions>({
   autohideTime: 25000,
 })
 
-const fractals = [...Array(10).keys()].map(x => `fractal${x}.png`)
+const fractals = [...Array(9).keys()].map(x => `fractal${x}.png`)
 
 const rscs = shallowReactive(fractals.map(x => new Img(x, x, 'fill')))
 
