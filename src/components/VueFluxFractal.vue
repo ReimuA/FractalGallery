@@ -39,7 +39,6 @@ import {
   type VueFluxOptions,
 } from 'vue-flux'
 import 'vue-flux/style.css'
-import ressources from '@/ressources.json'
 
 const $vueFlux = ref()
 
@@ -49,9 +48,9 @@ const options = shallowReactive<VueFluxOptions>({
   autohideTime: 25000,
 })
 
-const rscs = shallowReactive(
-  ressources.map(x => new Img(x.path, x.name, 'fill')),
-)
+const fractals = [...Array(10).keys()].map(x => `fractal${x}.png`)
+
+const rscs = shallowReactive(fractals.map(x => new Img(x, x, 'fill')))
 
 const transitions = shallowReactive([Fade])
 </script>
